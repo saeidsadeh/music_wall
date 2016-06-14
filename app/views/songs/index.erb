@@ -1,0 +1,12 @@
+<font color="Green"><h1>List of Songs</h1></font>
+<hr width="50%" align="left">
+
+<% @songs.each do |song|%>
+  <div class="song" align="center">
+    <b>Song Title:</b><a href="/songs/<%=song.id%>"/><%=song.title%> <br>
+    <b>By: </b><%= song.author %>
+  </div>
+  <hr width="50%" align="left">
+<% end %>
+
+<a href="/songs/new">Post your favorite song... It's FREE (for now)!</a>
