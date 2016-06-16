@@ -78,42 +78,6 @@ end
   end
 
 
-# get '/login' do
-#   erb :'sessions/login'
-# end
-
-# post '/login' do
-#   user = User.find_by(email: params[:email]) 
-#   if !user.nil? and params[:password] == user.password
-#     session[:user_id] = user.id
-#     redirect '/'
-#   else
-#     # TODO: tell user that his email or password are incorrect
-#     redirect '/login'
-#   end
-# end
-
-
-# get '/signup' do
-#   @user = User.new
-#   erb :'sessions/signup'
-# end
-
-# post '/signup' do
-#   @user = User.new(email: params[:email], password: params[:password]) 
-#   if @user.save
-#     session[:user_id] = user.id
-#     redirect '/'
-#   else
-#     erb :'sessions/signup'
-#   end
-# end
-
-# get '/signout' do
-#   session.clear
-#   redirect '/'
-# end
-
 
 
 
