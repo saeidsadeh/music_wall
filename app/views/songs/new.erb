@@ -1,17 +1,38 @@
-<form method="post" action="/songs">
+
+
+<div class="container">
+
+<h1>Post a Song</h1>
+
+<hr/>
+
+
+<% if @song && @song.errors.any? %>
+  <div>
+    <strong>Some issues with your song, please fix them:</strong>
+    <ul>
+      <% @song.errors.full_messages.each do |song| %>
+        <li><%= song %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form method="post" action="/songs" class="form-signin">
   <div>
     <label>Author:</label>
-    <input type="text" name="author">
+    <input type="text" name="author" class="form-control" value="<%= @song.author %>">
   </div>
   <div>
     <label>Title:</label>
-    <input type="text" name="title">
+    <input type="text" name="title" class="form-control" value="<%= @song.title %>">
   </div>
   <div>
     <label>URL:</label>
-    <input type="text" name="url">
+    <input type="text" name="url" class="form-control" value="<%= @song.url %>">
   </div>
-  <div>
-    <input type="submit" value="Submit" >
-  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Submit Song</button>
+
 </form>
+
+    </div> <!-- /container -->
